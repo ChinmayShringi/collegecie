@@ -1,6 +1,8 @@
 import 'package:clg/Player.dart';
+import 'package:clg/lock.dart';
 import 'package:clg/made.dart';
 import 'package:clg/map.dart';
+import 'package:clg/music.dart';
 import 'package:clg/qrp.dart';
 import 'package:clg/stt.dart';
 import 'package:flutter/material.dart';
@@ -108,10 +110,21 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => STPage()),
+                  MaterialPageRoute(builder: (context) => LockPage()),
                 );
               },
               child: Text('Local Auth'),
+            ),
+            ElevatedButton(
+              //     disabledColor: Colors.red,
+              // disabledTextColor: Colors.black,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TTSPage()),
+                );
+              },
+              child: Text('Want to hear my voice?'),
             ),
             ElevatedButton(
               onPressed: () {
@@ -145,7 +158,7 @@ class _HomePageState extends State<HomePage> {
               height: 20,
             ),
             Text(
-              'Playing $result...',
+              '$result...',
               style: TextStyle(fontSize: 18),
             ),
           ],
